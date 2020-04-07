@@ -43,6 +43,7 @@ function handleError(res, reason, message, code) {
  */
 
 app.get("/api/contacts", function(req, res) {
+  console.log("GET METHOD");
   db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
@@ -53,6 +54,7 @@ app.get("/api/contacts", function(req, res) {
 });
 
 app.post("/api/contacts", function(req, res) {
+  console.log("POST METHOD");
   var newContact = req.body;
   newContact.createDate = new Date();
 
