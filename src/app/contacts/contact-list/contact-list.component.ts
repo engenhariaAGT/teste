@@ -67,12 +67,18 @@ export class ContactListComponent implements OnInit {
   }
 
   addContact = (contact: Contact) => {
+    console.log("--- ADD CONTACT 1----")
+    console.log(contact)
+    console.log("-------------")
     this.contacts.push(contact);
     this.selectContact(contact);
     return this.contacts;
   }
 
   updateContact = (contact: Contact) => {
+    console.log("--- UPDATE CONTACT 1----")
+    console.log(contact)
+    console.log("-------------")
     var idx = this.getIndexOfContact(contact._id);
     if (idx !== -1) {
       this.contacts[idx] = contact;

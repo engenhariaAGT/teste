@@ -36,7 +36,9 @@ export class ContactService {
 
     // put("/api/contacts/:id")
     updateContact(putContact: Contact): Promise<void | Contact> {
+      console.log(putContact)
       var putUrl = this.contactsUrl + '/' + putContact._id;
+      console.log("URL: "+putUrl)
       return this.http.put(putUrl, putContact)
                  .toPromise()
                  .then(response => response.json() as Contact)

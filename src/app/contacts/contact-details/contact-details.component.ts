@@ -22,12 +22,18 @@ export class ContactDetailsComponent {
   constructor (private contactService: ContactService) {}
 
   createContact(contact: Contact) {
+    console.log("--- ADD CONTACT 2----")
+    console.log(contact)
+    console.log("-------------")
     this.contactService.createContact(contact).then((newContact: Contact) => {
       this.createHandler(newContact);
     });
   }
 
   updateContact(contact: Contact): void {
+    console.log("--- UPDATE CONTACT 2----")
+    console.log(contact)
+    console.log("-------------")
     this.contactService.updateContact(contact).then((updatedContact: Contact) => {
       this.updateHandler(updatedContact);
     });
